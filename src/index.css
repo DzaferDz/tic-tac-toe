@@ -6,7 +6,57 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.board-row {
+  display: flex;
+}
 
+.square {
+  width: 100px;
+  height: 100px;
+  background-color: #fff;
+  border: 2px solid #333;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #333;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.square:hover {
+  background-color: #f0f0f0;
+  transform: scale(1.05);
+}
+
+.square:focus {
+  outline: none;
+}
+
+.square:disabled {
+  cursor: not-allowed;
+  background-color: #ddd;
+  color: #aaa;
+}
+
+.board-row:not(:last-child) .square {
+  border-bottom: none;
+}
+
+.board-row .square:not(:last-child) {
+  border-right: none;
+}
+
+/* Centering the Board */
+.board-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f9f9f9;
+  padding: 20px;
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
